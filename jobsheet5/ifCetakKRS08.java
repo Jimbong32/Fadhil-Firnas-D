@@ -2,17 +2,19 @@ import java.util.Scanner;
 
 public class ifCetakKRS08 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan nilai: ");
+        int nilai = input.nextInt();
 
-        System.out.print("Apakah UKT sudah lunas? (true/false): ");
-        boolean uktLunas = sc.nextBoolean();
-
-        if (uktLunas) {
-            System.out.println("Pembayaran UKT terverivikasi.");
+        // Versi IF-ELSE
+        if (nilai >= 60) {
+            System.out.println("Lulus");
         } else {
-            System.out.println("Silahkan cetak KRS dan minta tanda tangan DPA.");
+            System.out.println("Tidak Lulus");
         }
 
-        sc.close();
+        // Versi Ternary Operator
+        String hasil = (nilai >= 60) ? "Lulus" : "Tidak Lulus";
+        System.out.println("Hasil dengan ternary: " + hasil);
     }
 }
